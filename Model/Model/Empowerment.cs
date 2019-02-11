@@ -5,10 +5,14 @@ using System.Text.RegularExpressions;
 
 namespace WinFormEmpowerment.Model
 {//Довереность
-    public class Empowerment 
+    public class Empowerment
     {
-       //атрибуты документа
-       private DateTime _dateOfIssue;//Дата выдачи
+        //атрибуты документа
+        private static int count = 0;
+        private int iD;
+        public  int ID { get => iD; set => iD = value; }
+        
+        private DateTime _dateOfIssue;//Дата выдачи
         public DateTime DateOfIssue
         {
             get => _dateOfIssue;
@@ -81,14 +85,22 @@ namespace WinFormEmpowerment.Model
             _organisation = organisation;
             _contract = contract;
             _inventoryItems = inventoryItems;
+            
+
+            count++;
+            ID = count;
         }
 
+         ~Empowerment()
+        {
+            
+            count--;
+        }
         public IList InventoryItems
         {
             get => _inventoryItems;
             set => _inventoryItems = value;
         }
-
-
+        
     }
 }

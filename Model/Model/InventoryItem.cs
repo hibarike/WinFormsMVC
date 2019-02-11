@@ -2,7 +2,13 @@
 {
     public class InventoryItem
     {
-       // int number;//порядковый номер
+        private string _id;//порядковый номер
+        public string ID
+        {
+            get => _id;
+            set => _id = value;
+        }
+
         private string _name;//название ТМЦ
         public string Name
         {
@@ -30,13 +36,15 @@
             get => _numberOfItem;
             set => _numberOfItem = value;
         }
+        
 
-        public InventoryItem(string name, string unit, string numberOfItemString, int numberOfItem)
+        public InventoryItem(string number, string name, string unit, string numberOfItemString)
         {
+            _id = number;
             _name = name;
             _unit = unit;
             _numberOfItemString = numberOfItemString;
-            _numberOfItem = numberOfItem;
+            
         }
 
     }

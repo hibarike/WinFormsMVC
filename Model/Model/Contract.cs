@@ -4,6 +4,7 @@ namespace WinFormEmpowerment.Model
 {
     public class Contract
     {
+        //Название контракта
         private string _contractId;       
         public string ContractId
         {
